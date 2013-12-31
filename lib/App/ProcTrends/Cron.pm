@@ -20,11 +20,11 @@ App::ProcTrends::Cron - The great new App::ProcTrends::Cron!
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 SYNOPSIS
 
@@ -42,8 +42,6 @@ our $VERSION = '0.01';
 =head2 new
 
     The constructor.  Takes a hashref to override defaults.
-    Arguments: hashref or none
-    Returns: the object
 
 =cut
 
@@ -82,8 +80,6 @@ sub new {
 =head2 DESTROY
 
     Destructor.  Alarm should be cleared upon exit.
-    Arguments: none
-    Returns: none
 
 =cut
 
@@ -95,8 +91,6 @@ sub DESTROY {
 =head2 run_ps
 
     Driver method to execute ps, parses the output and return data structure
-    Arguments: none
-    Returns: hashref of data >= threshold for cpu, rss.  may croak if ps borks.
 
 =cut
 
@@ -131,8 +125,6 @@ sub run_ps {
 =head2 sanitize_cmd
 
     Parses a command and turns into a valid RRD DS name.
-    Arguments: command string
-    Returns: formatted command string
 
 =cut
 
@@ -163,8 +155,6 @@ sub sanitize_cmd {
 =head2 trim_below_threshold
 
     Trims metrics <= threshold for cpu, rss
-    Arguments: hashref to trim from
-    Returns: nothing, as hashref is updated
 
 =cut
 
@@ -190,10 +180,7 @@ sub trim_below_threshold {
 
 =head2 calc_rss_divisor
 
-    Returns what to divide the ps RSS output by.  For example, if the unit is
-        MB then we would divide KB by 1024.
-    Arguments: unit name (kb, mb, gb or tb)
-    Returns: the divisor.  may croak if nonsense unit is passed in.
+    Returns what to divide the ps RSS output by.  For example, if the unit is MB then we would divide KB by 1024.
 
 =cut
 
@@ -219,9 +206,6 @@ sub calc_rss_divisor {
             b. update RRD
             c. pop them from my list if exists
         4. go through the remaining RRDs from my list then fill with 0's 
-
-    Arguments: hash of metrics (output from run_ps method)
-    Returns: 1 on success, croaks on failure
 
 =cut
 
@@ -255,8 +239,6 @@ sub store_rrd {
 =head2 create_rrd
 
     Creates an RRD file.
-    Arguments: filename
-    Returns: 1 on success, croaks on failure
 
 =cut
 
@@ -279,8 +261,6 @@ sub create_rrd {
 =head2 update_rrd
 
     Updates an rrd file
-    Arguments: filename, key, value
-    Returns: none, but may croak from RRD::Simple::update()
 
 =cut
 
@@ -295,8 +275,6 @@ sub update_rrd {
 
     Signal handler for alarm().  It is an instance method because I need access
     to the attributes.
-    Arguments: none
-    Returns: none, cleans up and exit(1)
 
 =cut
 
@@ -325,8 +303,6 @@ sub alrm_handler {
 =head2 set_signal_handlers
 
     Set signal handlers.  The only one I'm expecting is SIGALRM.
-    Arguments: none
-    Returns: none
 
 =cut
 

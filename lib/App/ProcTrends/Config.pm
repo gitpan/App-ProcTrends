@@ -12,11 +12,11 @@ App::ProcTrends::Config - The great new App::ProcTrends::Config!
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 SYNOPSIS
 
@@ -30,8 +30,6 @@ our $VERSION = '0.01';
 =head2 new
 
     The constructor.
-    Arguments: none
-    Returns: the object
 
 =cut
 
@@ -74,8 +72,6 @@ sub new {
 =head2 find_cron_ps_cmd
 
     Tries to find ps then construct the ps command to use
-    Arguments: none
-    Returns: ps command, croaks otherwise
 
 =cut
 
@@ -89,10 +85,7 @@ sub find_cron_ps_cmd {
 
 =head2 find_cpu_cores
 
-    Tries to determine the # of cores on the system.  If it could not detect,
-        it will default to 1.
-    Arguments: none
-    Returns: # of cpu cores detected
+    Tries to determine the # of cores on the system.  If it could not detect, it will default to 1.
 
 =cut
 

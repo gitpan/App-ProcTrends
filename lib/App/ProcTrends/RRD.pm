@@ -17,11 +17,11 @@ App::ProcTrends::RRD - The great new App::ProcTrends::RRD!
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 SYNOPSIS
 
@@ -34,9 +34,7 @@ our $VERSION = '0.01';
 
 =head2 new
 
-    The constructor.
-    Arguments: none
-    Returns: the object
+    The constructor
 
 =cut
 
@@ -67,8 +65,6 @@ sub new {
 
     Look for *.rrd files in a particular directory
     Notes: although this is an object method, it doesn't use object internals
-    Arguments: directory to search
-    Returns: hashref proc => file where file ends in .rrd.  may croak on errors.
 
 =cut
 
@@ -93,13 +89,12 @@ sub find_rrds {
     Generates an image then return the graph data in a scalar.  Because RRDs is
     an XS module, this method actually creates a temp file, dump graph data then
     slurp back in.
-    Arguments: metric, process
-    Returns: a scalar containing graph data.  0 on failure
 
 =cut
 
 sub gen_image {
-    my ( $self, $metric, $process ) = @_;
+    my ( $self, $metric, $process ) = @_;    Arguments: metric, arrayref of processes
+    Returns: a scalar containing graph data.  0 on failure
 
     return 0 unless( $metric && $process );
     
@@ -139,8 +134,6 @@ sub gen_image {
 =head2 gen_group_image
 
     Generates an image from bunch of processes
-    Arguments: metric, arrayref of processes
-    Returns: a scalar containing graph data.  0 on failure
 
 =cut
 

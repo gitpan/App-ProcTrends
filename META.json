@@ -4,7 +4,7 @@
       "Satoshi Yagi <satoshi.yagi@yahoo.com>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Module::Build version 0.4007, CPAN::Meta::Converter version 2.132140",
    "license" : [
       "perl_5"
    ],
@@ -40,19 +40,19 @@
    "provides" : {
       "App::ProcTrends::Commandline" : {
          "file" : "lib/App/ProcTrends/Commandline.pm",
-         "version" : "0.01"
+         "version" : "0.02"
       },
       "App::ProcTrends::Config" : {
          "file" : "lib/App/ProcTrends/Config.pm",
-         "version" : "0.01"
+         "version" : "0.02"
       },
       "App::ProcTrends::Cron" : {
          "file" : "lib/App/ProcTrends/Cron.pm",
-         "version" : "0.01"
+         "version" : "0.02"
       },
       "App::ProcTrends::RRD" : {
          "file" : "lib/App/ProcTrends/RRD.pm",
-         "version" : "0.01"
+         "version" : "0.02"
       }
    },
    "release_status" : "stable",
@@ -61,5 +61,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.01"
+   "version" : "0.02"
 }

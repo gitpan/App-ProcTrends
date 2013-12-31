@@ -18,11 +18,11 @@ App::ProcTrends::Commandline - The great new App::ProcTrends::Commandline!
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 SYNOPSIS
 
@@ -41,8 +41,6 @@ our $VERSION = '0.01';
 =head2 new
 
     The constructor.
-    Arguments: none
-    Returns: the object
 
 =cut
 
@@ -72,8 +70,6 @@ sub new {
 =head2 table_handler
 
     Generates a table from RRD data
-    Arguments: none
-    Returns: the return code from print_table function
 
 =cut
 
@@ -127,8 +123,6 @@ sub table_handler {
 =head2 print_table 
 
     Parses a hashref and prints out on the screen.
-    Arguments: a hashref, output from generate_table_data
-    Returns: 1 on success
 
 =cut
 
@@ -155,8 +149,6 @@ sub print_table {
 =head2 list_handler
 
     Return $ref->{ 'cpu', 'rss' } = [ procs ]
-    Arguments: none
-    Returns: return code from print_list()
 
 =cut
 
@@ -179,8 +171,6 @@ sub list_handler {
 =head2 print_list 
 
     Prints the list (output from list method) on screen
-    Arguments: hashref (outcome of list method)
-    Returns: 1 on success
 
 =cut
 
@@ -203,8 +193,6 @@ sub print_list {
 =head2 img_handler
 
     Generates png image files using object params, and store them in $self->{ out_dir }
-    Arguments: none
-    Returns: 1 on success
 
 =cut
 

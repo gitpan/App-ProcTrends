@@ -7,7 +7,7 @@ build_requires:
 configure_requires:
   Module::Build: 0.40
 dynamic_config: 1
-generated_by: 'Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Module::Build version 0.4007, CPAN::Meta::Converter version 2.132140'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -16,16 +16,16 @@ name: App-ProcTrends
 provides:
   App::ProcTrends::Commandline:
     file: lib/App/ProcTrends/Commandline.pm
-    version: 0.01
+    version: 0.02
   App::ProcTrends::Config:
     file: lib/App/ProcTrends/Config.pm
-    version: 0.01
+    version: 0.02
   App::ProcTrends::Cron:
     file: lib/App/ProcTrends/Cron.pm
-    version: 0.01
+    version: 0.02
   App::ProcTrends::RRD:
     file: lib/App/ProcTrends/RRD.pm
-    version: 0.01
+    version: 0.02
 requires:
   CGI: 0
   File::Slurp: 0
@@ -37,4 +37,4 @@ requires:
   perl: 5.006
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.01
+version: 0.02
