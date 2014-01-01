@@ -3,25 +3,25 @@ require 5.006;
 use ExtUtils::MakeMaker;
 WriteMakefile
 (
-  'NAME' => 'App::ProcTrends',
-  'PL_FILES' => {},
   'VERSION_FROM' => 'lib/App/ProcTrends/Cron.pm',
-  'INSTALLDIRS' => 'site',
   'EXE_FILES' => [
                    'bin/cmdline.pl',
                    'bin/cron.pl',
                    'bin/img.pl',
                    'bin/server.pl'
                  ],
+  'PL_FILES' => {},
+  'NAME' => 'App::ProcTrends',
   'PREREQ_PM' => {
-                   'RRDTool::OO' => 0,
-                   'Mojolicious::Lite' => 0,
-                   'RRD::Simple' => 0,
-                   'CGI' => 0,
-                   'RRDs' => 0,
                    'Test::More' => 0,
+                   'CGI' => 0,
+                   'RRD::Simple' => 0,
                    'File::Slurp' => 0,
-                   'Log::Log4perl' => 0
-                 }
+                   'Log::Log4perl' => 0,
+                   'RRDTool::OO' => 0,
+                   'RRDs' => 0,
+                   'Mojolicious::Lite' => 0
+                 },
+  'INSTALLDIRS' => 'site'
 )
 ;
